@@ -4,7 +4,13 @@ This project demonstrates the setup of a cybersecurity homelab focused on monito
 
 `#Cybersecurity` `#Homelab` `#Monitoring` `#Splunk` `#VMware` `#KaliLinux` `#pfSense` `#SecurityOnion` `#WindowsServer2019` `#Windows10`
 
-![pfSense Logo](Images/pfSenseLogo.png) ![Security Onion Logo](Images/SecurityOnionLogo.png) ![Splunk Logo](Images/SplunkLogo.png)
+<p align="center">
+  <img src="Images/PfSenselogo.png" alt="pfSense Logo" width="300"/>
+  <img src="Images/sos.png" alt="Security Onion Logo" width="300"/>
+  <img src="Images/splunk.png" alt="Splunk Logo" width="300"/>
+  <img src="Images/KaliLogo.png" alt="Kali Linux Logo" width="300"/>
+</p>
+
 
 ## Overview
 A Homelab is a personal lab environment used to learn and experiment with different technologies in a controlled setting. This homelab is designed to explore monitoring and security practices using advanced configurations and custom setups.
