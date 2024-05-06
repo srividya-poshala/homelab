@@ -25,7 +25,6 @@ A Homelab is a personal lab environment used to learn and experiment with differ
 - **Vulnerable Machines** - Ubuntu, Windows
 
 
-
 ## Architecture
 Here is a network diagram that illustrates the configuration and interaction between the different components within the homelab:
 
@@ -61,10 +60,56 @@ Here is a network diagram that illustrates the configuration and interaction bet
    - Install VMware Workstation 17 Pro to serve as the platform for all virtual machines.
 
 2. **Setup and Configuration of pfSense:**
-   - Install pfSense on a VM to function as a dedicated firewall. Configure network interfaces and firewall rules.
+   - Install pfSense on a VM to function as a dedicated firewall.
+   - **Hardware Settings:** Add 5 additional network adapters to support connectivity for other machines administered by the pfSense machine.
+   - **Network Configuration:** Assign custom virtual networks to the network adapters.
+
+     <img src="Images/pfsense1.png" alt="Initial Setup of Network Interfaces" width="500">
+      
+      *Initial Setup of Network Interfaces*
+
+
+
+
+   - **Post-Installation Setup:**
+     - After completing the default installation settings and reboot, configure the names and IP addresses for the 6 network interfaces. This setup includes the network segments that other virtual machines in the lab will participate in.
+
+     <img src="Images/pfsense2.png" alt="Initial Setup of Network Interfaces" width="500">
+     
+     *Configuration of Interfaces and IP Assignments*
+
+   - **IP Addressing:**
+     - The IP address `192.168.1.1` is set for accessing the pfSense WebGUI via the Kali Linux machine.
+     - **Option 3 Interface:** Not assigned an IP address as it is designated to carry the span port traffic that Security Onion will monitor from the victim network.
 
 3. **Deploying Security Onion:**
-   - Install Security Onion to monitor network traffic and capture intrusion alerts.
+   - **Initial Setup:** Install Security Onion on a VM. It is configured to monitor all network traffic from the victim network by connecting directly to pfSense.
+     - Configure two network adapters for Security Onion, assigning them to `Vmnet4` and `Vmnet5` respectively.
+       - **Network Adapter 2:** Connected to `Vmnet4` (pfSense).
+       - **Network Adapter 3:** Connected to `Vmnet5` as a span port.
+
+     <img src="Images/seconion0.png" alt="Security Onion Setup" width="500">
+
+   - **Network Configuration:**
+     - `Network2` is mounted to `Vmnet4` which is managed by pfSense.
+     - `Network3` (Vmnet5) is configured as a span port to monitor mirrored traffic.
+
+     <img src="Images/seconion1.png" alt="Security Onion Network Configuration" width="500">
+
+   - **Post-Installation Configuration:**
+     - After Security Onion reboots, log in with your specified username and password.
+
+     <img src="Images/seconion2.png" alt="Security Onion Login" width="500">
+
+   - **Integrating with External Ubuntu Desktop:**
+     - After installing Security Onion, configure an external Ubuntu Desktop (simulating a SOC/Security Analyst workstation) to access the Security Onion web interface.
+       - Note the IP address of the Ubuntu machine (`secmgmt`).
+       - Create a firewall rule on Security Onion to allow web access from the Ubuntu machine's IP address.
+
+     - **Accessing the Web Interface:**
+       - From the Ubuntu desktop, access the Security Onion web interface using the IP address captured in the previous step.
+
+     <img src="Images/seconion_web_access.png" alt="Accessing Security Onion Web Interface" width="500">
 
 4. **Configuring Kali Linux:**
    - Setup Kali Linux for conducting security tests and penetration testing.
