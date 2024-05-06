@@ -5,10 +5,10 @@ This project demonstrates the setup of a cybersecurity homelab focused on monito
 `#Cybersecurity` `#Homelab` `#Monitoring` `#Splunk` `#VMware` `#KaliLinux` `#pfSense` `#SecurityOnion` `#WindowsServer2019` `#Windows10`
 
 <p align="center">
-  <img src="Images/PfSenselogo.png" alt="pfSense Logo" width="300"/>
-  <img src="Images/sos.png" alt="Security Onion Logo" width="300"/>
-  <img src="Images/splunk.png" alt="Splunk Logo" width="300"/>
-  <img src="Images/KaliLogo.png" alt="Kali Linux Logo" width="300"/>
+  <img src="Images/PfSenselogo.png" alt="pfSense Logo" style="width: 150px; margin: 10px;"/>
+  <img src="Images/sos.png" alt="Security Onion Logo" style="width: 150px; margin: 10px;"/>
+  <img src="Images/splunk.png" alt="Splunk Logo" style="width: 150px; margin: 10px;"/>
+  <img src="Images/KaliLogo.png" alt="Kali Linux Logo" style="width: 150px; margin: 10px;"/>
 </p>
 
 
