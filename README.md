@@ -28,7 +28,9 @@ A Homelab is a personal lab environment used to learn and experiment with differ
 ## Architecture
 Here is a network diagram that illustrates the configuration and interaction between the different components within the homelab:
 
-![Homelab Network Diagram](<Insert Network Diagram Here>)
+<p align="center">
+  <img src="Images/Architecture.webp" alt="Homelab Network Diagram">
+</p>
 
 ## Components
 ### Virtualization Platform
